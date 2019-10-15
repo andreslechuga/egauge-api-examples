@@ -1,0 +1,34 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+
+function init () {
+    var ruri = "";
+
+    var m = location.search.substr (1).split ("&");
+    for (var i = 0; i < m.length; ++i) {
+        var nv = m[i].split ("=", 2);
+        var name = nv[0];
+        var value = nv.length > 1 ? nv[1] : null;
+        switch (name) {
+           case "ruri": ruri = decodeURIComponent (value); break;
+        }
+    }
+    var form = document.getElementById ("form");
+    form.action = ruri;
+    form.submit ();
+}
+
+window.onload = init;
+</script>
+
+<form id="form" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="uri"
+    value="https://www.example.com/push-data?01345a535a">
+  <input type="hidden" name="options" value="totals">
+  <input type="hidden" name="user" value="davidm">
+  <input type="hidden" name="pw" value="not-really-my-password;-)">
+</form>
+</body>
+</html>
