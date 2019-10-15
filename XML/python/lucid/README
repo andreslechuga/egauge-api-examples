@@ -1,0 +1,6 @@
+This directory contains legacy 'lucid' code and is no longer maintained.
+
+Description of files:
+eGauge.py parses the push data into a Python data object;
+Lucid.py is an exmaple of outputting the prased data into another format;
+tst.py is a small test program to test the parsing and output.
